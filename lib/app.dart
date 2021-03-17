@@ -20,11 +20,51 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Widget _buildText() {
-      return Text("I love Flutter so much 💙");
+      return Text(
+        "I love Flutter so much 💙",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 25,
+        ),
+      );
     }
 
     Widget _buildRichText() {
-      return Text("I love Flutter so much 💙");
+      return SelectableText.rich(
+        TextSpan(
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+          children: <InlineSpan>[
+            TextSpan(
+              text: "I",
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            TextSpan(text: " love "),
+            TextSpan(
+              text: "Flutter",
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+            TextSpan(text: " so "),
+            TextSpan(
+              text: "much",
+              style: TextStyle(
+                fontSize: 35,
+                fontWeight: FontWeight.w100,
+              ),
+            ),
+            TextSpan(text: " 💙"),
+          ],
+        ),
+      );
     }
 
     return Scaffold(
